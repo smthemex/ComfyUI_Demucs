@@ -1,0 +1,211 @@
+{
+  "last_node_id": 4,
+  "last_link_id": 3,
+  "nodes": [
+    {
+      "id": 3,
+      "type": "LoadAudio",
+      "pos": {
+        "0": 4921,
+        "1": -1477
+      },
+      "size": {
+        "0": 315,
+        "1": 124
+      },
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "AUDIO",
+          "type": "AUDIO",
+          "links": [
+            2
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadAudio"
+      },
+      "widgets_values": [
+        "1.wav",
+        null,
+        ""
+      ]
+    },
+    {
+      "id": 2,
+      "type": "Demucs_Sampler",
+      "pos": {
+        "0": 5357,
+        "1": -1671
+      },
+      "size": {
+        "0": 315,
+        "1": 282
+      },
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "Demucs_MODEL",
+          "link": 1
+        },
+        {
+          "name": "audio",
+          "type": "AUDIO",
+          "link": 2
+        }
+      ],
+      "outputs": [
+        {
+          "name": "mixed",
+          "type": "AUDIO",
+          "links": [
+            3
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "bass",
+          "type": "AUDIO",
+          "links": null
+        },
+        {
+          "name": "drums",
+          "type": "AUDIO",
+          "links": null
+        },
+        {
+          "name": "other",
+          "type": "AUDIO",
+          "links": null
+        },
+        {
+          "name": "vocals",
+          "type": "AUDIO",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Demucs_Sampler"
+      },
+      "widgets_values": [
+        "mp3",
+        24,
+        "float32",
+        "rescale",
+        320,
+        true,
+        2
+      ]
+    },
+    {
+      "id": 4,
+      "type": "SaveAudio",
+      "pos": {
+        "0": 5876.337890625,
+        "1": -1613.2447509765625
+      },
+      "size": {
+        "0": 315,
+        "1": 100
+      },
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "audio",
+          "type": "AUDIO",
+          "link": 3
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "SaveAudio"
+      },
+      "widgets_values": [
+        "audio/ComfyUI",
+        null
+      ]
+    },
+    {
+      "id": 1,
+      "type": "Demucs_Loader",
+      "pos": {
+        "0": 4931,
+        "1": -1715
+      },
+      "size": {
+        "0": 315,
+        "1": 130
+      },
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "model",
+          "type": "Demucs_MODEL",
+          "links": [
+            1
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Demucs_Loader"
+      },
+      "widgets_values": [
+        "htdemucs",
+        0.25,
+        1,
+        true
+      ]
+    }
+  ],
+  "links": [
+    [
+      1,
+      1,
+      0,
+      2,
+      0,
+      "Demucs_MODEL"
+    ],
+    [
+      2,
+      3,
+      0,
+      2,
+      1,
+      "AUDIO"
+    ],
+    [
+      3,
+      2,
+      0,
+      4,
+      0,
+      "AUDIO"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 1.0152559799477174,
+      "offset": [
+        -4711.114530386892,
+        1979.6547717917404
+      ]
+    }
+  },
+  "version": 0.4
+}
