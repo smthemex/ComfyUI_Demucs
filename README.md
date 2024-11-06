@@ -18,7 +18,7 @@ git clone https://github.com/smthemex/ComfyUI_Demucs.git
 ----
 
 ```
-pip install -r requirements.txt 
+pip install -r requirements_minimal.txt
 ```
 
 3.Example
