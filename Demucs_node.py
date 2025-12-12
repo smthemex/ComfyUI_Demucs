@@ -102,7 +102,7 @@ class Demucs_Sampler:
         samplerate=44100
         audio_list=[]
         for stem, source in separated.items():
-            audio_dict=pre_audio(source,samplerate,clip_mode)
+            audio_dict=pre_audio(source,ext,samplerate,clip_mode)
             audio_list.append(audio_dict)
             if audio_save:
                 stem = out / "{track}/{stem}.{ext}".format(
